@@ -12,6 +12,11 @@ body{
     margin-right: 135px;
 }
 
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
 h1{
     font-weight: 300;
     margin-bottom: 30px;
