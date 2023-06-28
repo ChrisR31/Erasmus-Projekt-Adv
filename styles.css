@@ -1,5 +1,5 @@
 *{
-    /*box-sizing: border-box;*/
+    box-sizing: border-box;
     font-family: 'Barlow Condensed', sans-serif;
     margin: 0;
 }
@@ -10,6 +10,11 @@ body{
     color: #fff;
     margin-left: 135px;
     margin-right: 135px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
 }
 
 h1{
@@ -59,13 +64,25 @@ p{
 /*HEADER*/
 header{
     width: 100%;
+    margin-top: 5px;
 
 }
 
 nav{
     display: flex;
     margin-bottom: 135px;
+    align-items: center;
 
+}
+
+.header-list-container{
+    margin: auto;
+}
+
+
+#header-logo{
+    font-size: 40px;
+    line-height: 40px;
 }
 
 #header-list{
@@ -73,7 +90,8 @@ nav{
     list-style: none;
     gap: 50px;
     padding:0;
-    margin: 0 auto
+    margin: 0 auto;
+    font-size: 16px;
 }
 
 .header-list-item{
@@ -85,11 +103,42 @@ nav{
     color: #fff;
 }
 
+#header-contact-button{
+    display: flex;
+    border: 1px solid rgba(255,255,255, 0.3);
+    width:140px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+
+.toggle-button{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.8rem;
+    height: 1.3rem;
+    margin-left: auto;
+
+}
+
+.toggle-button .bar{
+    height:.18rem;
+    width:100%;
+    background-color: white;
+    border-radius: .625rem;
+
+}
+
+
+
 /*SECTION 1*/
 
 #section-1-gamedevelopment{
     display: flex;
-    margin-bottom: 275px
+    margin-bottom: 150px
 }
 
 #section-1-text-container{
@@ -108,6 +157,7 @@ nav{
     max-width: 570px;
     height: auto
 }
+
 
 
 
@@ -166,7 +216,7 @@ nav{
 
 #section-2-about-us{
     display: flex;
-    margin-bottom: 196px;
+    margin-bottom: 150px;
 }
 
 #section-2-img-container{
@@ -330,6 +380,14 @@ nav{
 
 /* SECTION 4 */
 
+#inner-heaxgon-ctn{
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    clip-path: url("#path-hex");
+}
+
+
 
 /* SECTION 5 */
 
@@ -399,9 +457,22 @@ nav{
     top: 0;
     width: 30%;
     height: 100%;
-    
-    z-index: 100;
 
+    z-index: 100;
+}
+
+
+#section-5-slider-overlay{
+    background-color: #fff;
+    color: black;
+    width: 270px;
+    height: 352px;
+    position: absolute;
+    left: -15%;
+    top: 15%;
+    text-align: left;
+    border-radius: 15px;
+    padding: 15px
 }
 
 /* SECTION 6*/
@@ -463,32 +534,38 @@ nav{
 }
 
 #section-7-hexagon{
-    position:relative;
-    width: 10em;
-    height: 17.32em;
-    background-color: red;
-    transform: rotate(90deg);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    position: relative;
+    width: 9.375em;
+    height: 5.4128em;
+    background-color: transparent;
+    border-radius: .5em / 1em;
+    background-image: linear-gradient(to right,#2B2D66, #4D4F95);
+
 }
 
 #section-7-hexagon::before, #section-7-hexagon::after{
-    content: '';
+    content: "";
     position: absolute;
     width: inherit;
     height: inherit;
     background-color: inherit;
-    border-radius: inherit
+    border-radius: inherit;
+
 }
 
 #section-7-hexagon::before{
     transform: rotate(60deg);
+    background-image: linear-gradient(to top right,#2B2D66, #4D4F95);
+
 }
 
 #section-7-hexagon::after{
     transform: rotate(-60deg);
+    background-image: linear-gradient(to bottom right,#2B2D66, #4D4F95);
+
 }
 
 #section-7-hexagon-small{
@@ -517,6 +594,7 @@ nav{
     background-color: inherit;
     border-radius: inherit;
     border: 5px solid white;
+    z-index: -1;
     
     
     
@@ -532,9 +610,730 @@ nav{
 
 
 
+.hexagon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 9.375em;
+    height: 5.4128em;
+    background-color: transparent;
+    border-radius: .5em / 1em;
+    background-image: linear-gradient(to right,#2B2D66, #4D4F95);
+
+ 
+}
+
+.hexagon::before, .hexagon::after{
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    border-radius: inherit;
+
+}
+
+
+.hexagon::before{
+    transform: rotate(60deg);
+    background-image: linear-gradient(to top right,#2B2D66, #4D4F95);
+
+}
+
+.hexagon::after{
+    transform: rotate(-60deg);
+    background-image: linear-gradient(to bottom right,#2B2D66, #4D4F95);
+
+}
+
+
+
+
+
 
 #section-7-heaxagon-img-diamond{
     z-index: 100;
-    transform: rotate(-90deg);
+    /* transform: rotate(-90deg); */
+    width: 50px;
+    height: auto;
+}
+
+
+/* SECTION 8 */
+
+#section-8-game-events{
+    margin-bottom: 150px;
+}
+
+#section-8-text-container{
+    text-align: center;
+}
+
+#section-8-panels-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+  
+}
+
+.section-8-panel-info{
+    padding-left: 32px;
+    padding-top: 20px;
+    background-image: linear-gradient(#2B2D66, #4D4F95);
+margin:0;
+padding-bottom: 30px;
+height: 100%;
+}
+
+.section-8-panel-info h1{
+    font-size: 24px;
+}
+
+.section-8-panel-info h4{
+    letter-spacing: normal;
+}
+
+
+
+.section-8-panel{
+    border: 2px solid rgba(255,255,255, 0.078);
+    border-radius: 20px;
+    box-shadow: 0px 24px 48px rgba(0, 1, 44, 0.157184);
+    margin:20px;
+    overflow: hidden;
+    align-self: stretch;
+    position: relative;
+}
+
+.section-8-panel-img{
+    width: 100%;
+    height: auto;
+}
+
+.section-8-panel-overlay{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-image: linear-gradient(to right, #E6606C,#6357F6  );
+    display: flex;
+    width: auto;
+    padding: 5px;
+    border-radius: 3px;
+    align-items: center;
+
+}
+
+.section-8-panel-overlay p{
+    margin: 0;
+    padding-left: 3px;
+}
+
+.section-8-shape-time{
+    max-width: 100%;
+}
+
+
+#section-8-all-events-button{
+    display: flex;
+    border: 1px solid rgba(255,255,255, 0.3);
+    width:170px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 8px;
+}
+
+/* SECTION 9*/
+
+#section-9-reviews{
+    display: flex;
+    margin-bottom: 150px;
+}
+
+#section-9-text-container{
+    width: 50%;
+    margin-right: 50px;
+}
+
+#section-9-review-panel{
+    position: relative;
+    width: 50%;
+    background-image: linear-gradient(#4D4F95 , #2B2D66);
+    padding: 25px;
+    border: 2px solid rgba(255,255,255, 0.078);
+    border-radius: 15px;
+}
+
+#section-9-quote-marks{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 30px;
+    right: -50px;
+}
+
+.star{
+    position: absolute;
+    left: 0;
+}
+
+#section-9-review-text{
+    margin-top: 50px;
+}
+
+#section-9-text-container h1{
+    font-size: 56px;
+    line-height: 64px ;
+}
+
+#section-9-review-author{
+    font-size: 24px;
+    margin-bottom:0 
+}
+
+#section-9-review-author-add{
+    font-size: 16px;
+}
+
+/* SECTION 10*/
+
+#section-10-our-awards{
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+/* #section-10-our-awards h4{
+    font-size: 16px;
+} */
+
+#section-10-logo-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* SECTION 11*/
+
+#section-11-our-blog{
+    margin-bottom: 150px;
+
+}
+
+#section-11-text-container{
+    text-align: center;
+}
+
+
+#section-11-panels-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+}
+
+.section-11-panel-info{
+    padding-left: 32px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    background-image: linear-gradient(#2B2D66, #4D4F95);
+    margin:0;
+    
+    height: 100%;
+}
+
+.section-11-panel-info h1{
+    font-size: 24px;
+}
+
+.section-11-panel-info h4{
+    letter-spacing: normal;
+}
+
+
+
+.section-11-panel{
+    border: 2px solid rgba(255,255,255, 0.078);
+    border-radius: 20px;
+    box-shadow: 0px 24px 48px rgba(0, 1, 44, 0.157184);
+    margin:20px;
+    overflow: hidden;
+    align-self: stretch;
+}
+
+.section-11-panel img{
+    width: 100%;
+    height: auto;
+}
+
+#section-11-see-more-button{
+    display: flex;
+    border: 1px solid rgba(255,255,255, 0.3);
+    width:170px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 8px;
+}
+
+/* SECTION 12*/
+
+#section-12-contact{
+    background-image: linear-gradient(to right,#E6606C, #6357F6);
+    
+    display: flex;
+    border: 2px solid rgba(255,255,255, 0.078); 
+    border-radius: 20px;
+    margin-bottom: 150px;
+}
+
+#section-12-text{
+    width: 50%;
+    margin: 60px
+}
+
+#section-12-button-container{
+    width: 50%;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url(pic_section_12_background_symbols.png);
+   
+}
+
+
+#section-12-button{
+    background-color: #E6606C;
+    display: flex;
+    border: 1px solid rgba(255,255,255, 0.3);
+    width:170px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-right: 70px;
+}
+
+
+/* FOOTER*/
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+    margin-left: 35px;
+    margin-right: 35px;
+
+}
+
+#footer-logo{
+    font-size: 40px;
+}
+
+.footer-list{
+    list-style: none;
+    padding: 0;
+}
+
+#footer-button-container{
+    display: flex;
+    gap: 5px;
+}
+
+.footer-button{
+    background-color:#6357F6 ;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* FOOTER 2*/
+
+#footer-2{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+
+#footer-2 div{
+    font-size: 16px;
+
+}
+
+#footer-2-copyright{
+    margin-right: auto;
+    margin-left: 0px;
+}
+
+.footer-2-margin{
+    margin-left: 40px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 1000px) {
+    
+    body{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+
+
+    /* HEADER */
+
+
+    nav{
+        margin-bottom: 50px;
+    }
+ 
+    .toggle-button{
+        display: flex;
+    }
+
+    .header-list-container{
+        display: none;
+        /* top: 5.3rem;
+        
+        height: 32rem; */
+        top: 50px;
+        left: 0;
+        right: 0;
+        position: absolute;
+        padding-right: 20px;
+        background-color: transparent;
+        /* background-image: linear-gradient(to right,#181942, #3e3f8a ); */
+        /* transition: all 2s; */
+    }
+
+
+    
+
+    
+
+    .header-list-container ul{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header-list-container li{
+        text-align: end;
+    }
+
+
+    
+
+    .header-list-container.active{
+        display: flex;
+    }
+
+
+    #header-list{
+        gap: 20px;
+    }
+    
+    #header-contact-button{
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* SECTION 1*/
+
+    #section-1-gamedevelopment{
+        flex-direction: column-reverse;
+
+    }
+
+    #section-1-text-container{
+        width: 100%;
+    }
+
+    #section-1-text-btn-container{
+        /* justify-content: center; */
+    }
+    
+    #section-1-img-container{
+        width: 100%;
+    
+    }
+
+    #section-1-img.active{
+        opacity: 0;    
+    }
+
+    /* SECTION 2 */
+
+    #section-2-about-us{
+        display: block;
+    }
+
+    #section-2-text-container{
+        width: 100%;
+    }
+
+    #section-2-img-container{
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* SECTION 3*/
+
+    #section-3-game-portfolio{
+    }
+
+    #section-3-img-container{
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #section-3-img-big-container{
+        padding: 0;
+    }
+
+
+    
+    #section-3-img-big-container{
+        
+      margin-right: 0;
+    }
+    
+  
+    
+    #section-3-img-container img{
+        width: 100%;
+        height: auto;
+    }
+    
+    #section-3-img-small-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #section-3-img-small-wrapper img{
+        width: 100%;
+        height: auto;
+    }
+    
+    #section-3-small-img-2{
+        margin-top: 5%;
+    }
+    
+    
+    .img-big-info-text{
+        padding-left: 32px;
+        padding-top: 20px;
+    }
+    
+    .img-big-info h1{
+        font-size: 24px;
+    }   
+           
+    
+    .img-big-info h4{
+        margin-bottom: 12px;
+    }
+    
+    .section-3-download-button{
+        align-self: center;
+        justify-self: flex-end;
+        margin-left: auto;
+        margin-right: 10%;
+        background-color: #6357F6;
+        padding: 15px;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+    }
+
+
+    /* SECTION 5 */
+
+    #section-5-slider-img-container{
+        position: relative;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #section-5-slider-overlay{
+        position: relative;
+        top: 120%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+   
+        
+    }
+
+
+    /* SECTION 6*/
+
+    #section-6-boxes-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .section-6-box{
+        background-image: linear-gradient(to top,#2B2D66, #4D4F95);
+        border-radius: 15px;
+        width: 220px ;
+        height: 128px;
+        padding-left: 20px;
+        padding-top: 20px;
+        transition: all 300ms;
+        /*margin: 16px 0;*/
+    }
+
+    /* SECTION 7*/
+
+    #section-7-our-services{
+        display: block;
+    }
+
+    #section-7-img-container{
+        width: 100%;
+    }
+
+    #section-7-text-container{
+        width: 100%;
+    }
+
+
+    /* SECTION 8*/
+
+    #section-8-panels-container{
+        display: block;
+    }
+
+
+    /* SECTION 9*/
+
+    #section-9-reviews{
+        display: block;
+    }
+    
+    #section-9-text-container{
+        width: 100%;
+    }
+
+    #section-9-review-panel{
+        width: 100%;
+    }
+
+
+    /* SECTION 10*/
+
+    #section-10-logo-container{
+        flex-wrap: wrap;
+    }
+
+    #section-10-logo-container img{
+        margin-bottom: 15px;
+    }
+
+    /* SECTION 11 */
+
+    #section-11-panels-container{
+        display: block;
+    }
+
+
+    /* SECTION 12*/
+
+    #section-12-contact{
+    background-image: linear-gradient(to right,#E6606C, #6357F6);
+    display: block;
+    border: 2px solid rgba(255,255,255, 0.078); 
+    border-radius: 20px;
+    margin-bottom: 150px;
+    padding: 20px;
+}
+
+#section-12-text{
+    width: auto;
+    margin: 0;
+}
+
+#section-12-button-container{
+    width: auto;
+    display: block;
+    
+    background-image: url(pic_section_12_background_symbols.png);
+   
+}
+
+
+#section-12-button{
+    background-color: #E6606C;
+    display: flex;
+    border: 1px solid rgba(255,255,255, 0.3);
+    width:170px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-right: 70px;
+}
+
+    #section-12-text p{
+     
+        font-size: 16px;
+    }
+
+
+
+    /* FOOTER */
+
+    footer ul{
+        margin-bottom: 30px;
+    }
+
+    
+
+    footer{
+        display: block;
+        text-align: center;
+    }
+
+    #footer-button-container{
+        justify-content: center;    
+    }
+
+
+    /* FOOTER 2*/
+
+    #footer-2{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .footer-2-margin{
+        margin: 0;
+    }
+
 }
