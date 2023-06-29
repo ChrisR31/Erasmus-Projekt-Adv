@@ -418,7 +418,7 @@ nav{
     height: 16px;
     border: 1px solid rgba(255,255,255, 0.08);
     border-radius: 50%;
-    background-image: linear-gradient(#2B2D66,#4D4F95 );
+    background-image: linear-gradient(#2B2D66,#4D4F95);
 }
 
 #section-5-slider-button-container{
@@ -429,14 +429,13 @@ nav{
 
 #section-5-slider-img-container{
     position: relative;
-    width: 770px;
-    height: 480px;
+    width: 770px; 
+    height: auto;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .section-5-slider-button-choosed{
-
     background-image: linear-gradient(to right,#E6606C, #6357F6);
 }
 
@@ -446,7 +445,6 @@ nav{
     top: 0;
     width: 30%;
     height: 100%;
-    
     z-index: 100;
 
 }
@@ -457,7 +455,6 @@ nav{
     top: 0;
     width: 30%;
     height: 100%;
-
     z-index: 100;
 }
 
@@ -543,7 +540,7 @@ nav{
     background-color: transparent;
     border-radius: .5em / 1em;
     background-image: linear-gradient(to right,#2B2D66, #4D4F95);
-
+    /* margin-top: 75px; */
 }
 
 #section-7-hexagon::before, #section-7-hexagon::after{
@@ -568,12 +565,28 @@ nav{
 
 }
 
-#section-7-hexagon-small{
+#section-7-hexagon-container{
+    display: flex;
+    margin-top: 75px;
+}
+
+#section-7-hexagon-text{
+    padding-left: 30px;
+    margin: auto 0;
+    text-align: left;
+}
+
+#section-7-hexagon-text p{
+    margin: 0;
+}
+
+
+
+/* #section-7-hexagon-small{
     position:relative;
     width: 7.505em;
     height: 13em;
     background-color: blue;
-    /*transform: rotate(90deg);*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -606,47 +619,7 @@ nav{
 
 #section-7-hexagon-small::after{
     transform: rotate(-60deg);
-}
-
-
-
-.hexagon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 9.375em;
-    height: 5.4128em;
-    background-color: transparent;
-    border-radius: .5em / 1em;
-    background-image: linear-gradient(to right,#2B2D66, #4D4F95);
-
- 
-}
-
-.hexagon::before, .hexagon::after{
-    content: "";
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    background-color: inherit;
-    border-radius: inherit;
-
-}
-
-
-.hexagon::before{
-    transform: rotate(60deg);
-    background-image: linear-gradient(to top right,#2B2D66, #4D4F95);
-
-}
-
-.hexagon::after{
-    transform: rotate(-60deg);
-    background-image: linear-gradient(to bottom right,#2B2D66, #4D4F95);
-
-}
-
+} */
 
 
 
@@ -655,8 +628,9 @@ nav{
 #section-7-heaxagon-img-diamond{
     z-index: 100;
     /* transform: rotate(-90deg); */
-    width: 50px;
+    width: 80px;
     height: auto;
+
 }
 
 
@@ -892,18 +866,19 @@ height: 100%;
 }
 
 #section-12-text{
-    width: 50%;
+    width: 45%;
     margin: 60px
 }
 
 #section-12-button-container{
-    width: 50%;
+    width: 55%;
     
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-image: url(pic_section_12_background_symbols.png);
-   
+    background-image: url(images/pic_section_12_background_symbols.png);
+   background-repeat: no-repeat;
+   background-position: center;
 }
 
 
@@ -1179,12 +1154,13 @@ footer{
     }
 
     #section-5-slider-overlay{
-        position: relative;
-        top: 120%;
-        left: 50%;
+        position: absolute;
+        top: 150%;
+        left: 50%; 
         transform: translate(-50%, -50%);
-   
-        
+        min-width: 200px;
+        max-width: 290px;
+        width: auto;
     }
 
 
@@ -1243,8 +1219,10 @@ footer{
 
     #section-9-review-panel{
         width: 100%;
+        padding-top: 60px;
     }
 
+   
 
     /* SECTION 10*/
 
@@ -1266,7 +1244,9 @@ footer{
     /* SECTION 12*/
 
     #section-12-contact{
-    background-image: linear-gradient(to right,#E6606C, #6357F6);
+    background-image: url(images/pic_section_12_background_symbols.png), linear-gradient(to right,#E6606C, #6357F6);
+    background-position: right bottom;   
+    background-repeat: no-repeat;
     display: block;
     border: 2px solid rgba(255,255,255, 0.078); 
     border-radius: 20px;
@@ -1282,8 +1262,7 @@ footer{
 #section-12-button-container{
     width: auto;
     display: block;
-    
-    background-image: url(pic_section_12_background_symbols.png);
+    background-image: none;
    
 }
 
