@@ -1078,7 +1078,7 @@ footer{
 
     #section-3-img-container{
         display: block;
-        text-align: center;
+        /* text-align: center; */
         margin-left: auto;
         margin-right: auto;
     }
